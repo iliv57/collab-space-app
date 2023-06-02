@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    command: npm run start
+    volumes:
+      - ./backend:/usr/src/app/backend
+      - /usr/src/app/backend/node_modules
+    ports:
+      - 3000:3000
+    env_file:
+      - ./backend/.env
+    networks:
+      - app
+    depends_on:
+      - mysql
+
+  frontend:
+    build:
+      context: ./frontend
+    command: npm run dev - --host
+    volumes:
+      - ./frontend:/usr/src/app/frontend
+      - /usr/src/app/frontend/node_modules
+    ports:
+      - 5173:5173
+    networks:
+      - app
+    depends_on:
+      - backend
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    env_file:
+      - ./backend/.env
+    environment:
+        MYSQL_ROOT_PASSWORD: '12345'
+        MYSQL_ROOT_HOST: '%'
+        MYSQL_DATABASE: 'collab_space'
+        MYSQL_USER: 'user'
+        MYSQL_PASSWORD: '12345'
+        MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    networks:
+      - app
+
+networks:
+  app:
+volumes:
+  mysql:

@@ -4,6 +4,7 @@ services:
   backend:
     build:
       context: ./backend
+    container_name: cs_backend
     command: npm run start
     volumes:
       - ./backend:/usr/src/app/backend
@@ -20,6 +21,7 @@ services:
   frontend:
     build:
       context: ./frontend
+    container_name: cs_frontend
     command: npm run dev - --host
     volumes:
       - ./frontend:/usr/src/app/frontend
@@ -33,6 +35,7 @@ services:
 
   mysql:
     image: mysql:8.0
+    container_name: cs_mysql
     volumes:
       - mysql:/var/lib/mysql
     ports:

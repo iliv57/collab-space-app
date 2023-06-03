@@ -5,7 +5,7 @@ services:
     build:
       context: ./backend
     container_name: cs_backend
-    command: npm run start
+    command: npm run start:dev
     volumes:
       - ./backend:/usr/src/app/backend
       - /usr/src/app/backend/node_modules
@@ -28,6 +28,8 @@ services:
       - /usr/src/app/frontend/node_modules
     ports:
       - 5173:5173
+    env_file:
+      - ./backend/.env
     networks:
       - app
     depends_on:
@@ -40,8 +42,6 @@ services:
       - mysql:/var/lib/mysql
     ports:
       - 3306:3306
-    env_file:
-      - ./backend/.env
     environment:
         MYSQL_ROOT_PASSWORD: '12345'
         MYSQL_ROOT_HOST: '%'

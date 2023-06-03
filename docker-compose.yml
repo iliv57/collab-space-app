@@ -22,7 +22,7 @@ services:
     build:
       context: ./frontend
     container_name: cs_frontend
-    command: npm run dev - --host
+    command: npm run dev -- --host
     volumes:
       - ./frontend:/usr/src/app/frontend
       - /usr/src/app/frontend/node_modules

@@ -64,7 +64,7 @@ Nach dem ersten Start ist die Datenbank noch nicht für die App fertig eingerich
 docker compose exec backend npx mikro-orm migration:up
 ```
 
-Damit werden die Datenbank Schemas erstellt.
+Damit werden die Datenbank Schemata erstellt.
 
 Als nächstes kann noch in die Datenbank ein paar Testdaten hinzugefügt werden mit:
 
@@ -74,7 +74,7 @@ docker compose exec backend npx mikro-orm seeder:run
 
 ![F2V6o9A](https://github.com/KIT-PSE/collab-space-app/assets/37345813/bb1b8013-8046-421c-b2e9-1a146e80b6ab)
 
-Wenn alles geklappt hat sollte man jetzt im Browser jetzt die Seite `localhost:5173` öffnen können und sieht die App.
+Wenn alles geklappt hat sollte man im Browser die Seite `localhost:5173` öffnen können und sieht die App.
 
 ![DQ5Nbbq](https://github.com/KIT-PSE/collab-space-app/assets/37345813/b8e1d8ba-a687-4518-838e-1a0b9a2d8335)
 

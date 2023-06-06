@@ -5,7 +5,7 @@ cp ./frontend/.env.example ./frontend/.env
 
 # Ueberpruefe, ob das Betriebssystem Windows ist
 if [ "$(uname -s)" = "MINGW"* ] || [ "$(uname -s)" = "CYGWIN"* ] || [ "$(uname -s)" = "MSYS"* ]; then
-    echo 'CHOKIDAR_USEPOLLING=true' >> ./frontend/.env
+    echo '\nCHOKIDAR_USEPOLLING=true' >> ./frontend/.env
 else
-    echo 'CHOKIDAR_USEPOLLING=false' >> ./frontend/.env
+    echo '\nCHOKIDAR_USEPOLLING=false' >> ./frontend/.env
 fi

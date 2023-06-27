@@ -9,7 +9,7 @@
 
 ## Schritte um die App zum Laufen zu bringen
 
-> Unter Windows sollten die Befehle auf der *Git Bash* Konsole ausgeführt werden. Beim Installieren von Git auf Windows sollte *Git Bash* automatisch mit installiert werden.
+> Unter Windows sollten alle Befehle in einer Konsole innerhalb der WSL-Installation ausgeführt werden. Standardmäßig sollte bei der oben aufgeführten Installtionsanleitung Ubuntu installiert werden. Eine WSL-Konsole kann dann einfach über die Eingabe 'Ubuntu' in das Startfenster geöffnet werden.
 >
 > Unter Linux und Mac kann ein ganz normales Terminal verwendet werden
 
@@ -22,6 +22,9 @@ So sieht die Docker App unter Windows frisch installiert dann aus
 ![QlV491s](https://github.com/KIT-PSE/collab-space-app/assets/37345813/bc18c12f-fa87-486d-b7bf-4e79e91da97f)
 
 ### Repository klonen
+
+>#### Erinnerung - Windows
+>Um die Anwendung später unter Windows einwandfrei starten zu können, solle die Repository in einem Verzeichnis innerhalb von WSL gespeichert werden. Gehe also nun sicher, dass eine WSL-Konsole, wie am Anfang beschreiben, geöffnet ist.
 
 Erstelle und navigiere mit der Konsole der Ordner, in den die Repository gespeichert werden soll (z.B. `mkdir pse && cd pse`). Unter diesem Ort führe folgenden Befehl aus:
 

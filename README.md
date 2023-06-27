@@ -93,3 +93,28 @@ Zum Stoppen der App kann in dem Konsolen Fenster in dem die App läuft `Strg+C` 
 Nachdem oben die Schritte befolgt wurden ist zum Starten der App nur der Befehl `docker compose up` im entsprechnedem Ordner notwendig.
 
 ![Nr7RYXE](https://github.com/KIT-PSE/collab-space-app/assets/37345813/10460c8f-f8ce-42d4-b2cb-011c281e1a69)
+
+
+## Zusammenfassung - Kurzanleitung für Windows
+Ausgangspunkt: Git, Docker & WSL2 installiert
+- Docker starten
+- WSL2 Konsole starten
+  - 'Ubuntu' in das Startfenster eingeben
+- SSH key erstellen
+  - `ssh-keygen -t ed25519 -C "your_email@example.com"` - Einfach alle Eingaben bestätigen
+  - `eval "$(ssh-agent -s)"`
+  - `ssh-add ~/.ssh/id_ed25519`
+  - `cat ~/.ssh/id_ed25519.pub` - Die Ausgabe dieses Commands in die Zwischenablage kopieren
+  - Github Account Einstellungen öffnen -> Auf `SSH and GPG keys` klicken -> Neuen SSH key erstellen und eben kopierten Text einfügen
+- In das Verzeichnis wechseln, in welches die Repository gespeichert werden soll
+- `git clone --recurse-submodules git@github.com:KIT-PSE/collab-space-app.git`
+- `ls collab-space-app`
+- `./init.sh`
+- `docker compose up`
+- Auf das Starten des Docker Containers warten
+- Währenddessen seperate Konsole öffnen
+- Sobald der Docker Container läuft in der seperaten Konsole folgende Commands ausführen
+- `docker compose exec backend npx mikro-orm migration:up`
+- `docker compose exec backend npx mikro-orm seeder:run`
+- Nun sollte die Anwendung unter `localhost:5173` erreichbar sein
+

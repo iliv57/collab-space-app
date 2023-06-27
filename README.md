@@ -108,7 +108,7 @@ Ausgangspunkt: Git, Docker & WSL2 installiert
   - Github Account Einstellungen öffnen -> Auf `SSH and GPG keys` klicken -> Neuen SSH key erstellen und eben kopierten Text einfügen
 - In das Verzeichnis wechseln, in welches die Repository gespeichert werden soll
 - `git clone --recurse-submodules git@github.com:KIT-PSE/collab-space-app.git`
-- `ls collab-space-app`
+- `cd collab-space-app`
 - `./init.sh`
 - `docker compose up`
 - Auf das Starten des Docker Containers warten

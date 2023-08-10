@@ -5,6 +5,7 @@ services:
     build:
       context: ./proxy
     container_name: cs_prod_proxy
+    restart: always
     ports:
       - 80:80
     networks:
@@ -18,6 +19,7 @@ services:
       context: ./backend
       target: production
     container_name: cs_prod_backend
+    restart: always
     ports:
       - 3000:80
     env_file:
@@ -32,6 +34,7 @@ services:
       context: ./frontend
       target: production
     container_name: cs_prod_frontend
+    restart: always
     ports:
       - 3001:80
     env_file:
@@ -44,6 +47,7 @@ services:
   mysql:
     image: mysql:8.0
     container_name: cs_prod_mysql
+    restart: always
     volumes:
       - mysql:/var/lib/mysql
     ports:

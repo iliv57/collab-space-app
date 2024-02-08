@@ -1,6 +1,6 @@
 [submodule "frontend"]
 	path = frontend
-	url = git@github.com:KIT-PSE/collab-space-frontend.git
+	url = git@github.com:osl2/collab-space-frontend
 [submodule "backend"]
 	path = backend
-	url = git@github.com:KIT-PSE/collab-space-backend.git
+	url = git@github.com:osl2/collab-space-backend
